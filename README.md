@@ -6,10 +6,13 @@ A modern, responsive portfolio website built with ASP.NET Core MVC featuring int
 
 ## ✨ Features
 
+- **Multi-Page Architecture**: Separate pages for Home, About, Skills, Projects, and Contact
 - **Interactive Hero Section**: Animated gradient background with floating elements
 - **Responsive Design**: Mobile-first approach with Bootstrap 5
 - **Contact Form**: Server-side validation with email notifications
 - **Professional Styling**: Modern UI with smooth animations
+- **Skills Showcase**: Interactive progress bars and certification timeline
+- **Project Portfolio**: Detailed project cards with technology badges
 - **SEO Optimized**: Proper meta tags and semantic HTML
 - **Fast Loading**: Optimized assets and efficient code
 
@@ -26,98 +29,140 @@ Visit the live website: [Your Portfolio URL]
 - **Database**: SQLite (for future enhancements)
 - **Deployment**: IIS/Windows Server
 
-## 📋 Prerequisites
+## � Quick Start Commands
 
+### Prerequisites
 - .NET 10.0 SDK or later
 - Visual Studio 2022 or VS Code
 - Gmail account (for email functionality)
 
-## 🔧 Installation & Setup
-
-### 1. Clone the Repository
+### 1. Clone and Navigate
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
+git clone https://github.com/nafeesarafat/nafis-portfolio.git
 cd PortfolioWebsite
 ```
 
-### 2. Configure Email Settings
+### 2. Setup Environment Variables
+```bash
+# Copy the example environment file
+cp .env.example .env
 
-#### Option A: Environment Variables (Recommended for Production)
-Create a `.env` file in the root directory:
-```env
-# Email Configuration
-EmailSettings__SmtpServer=smtp.gmail.com
-EmailSettings__SmtpPort=587
-EmailSettings__SenderEmail=your-email@gmail.com
-EmailSettings__SenderPassword=your-app-password
-EmailSettings__RecipientEmail=your-email@gmail.com
+# Edit .env file with your Gmail credentials
+# EmailSettings__SenderEmail=your-email@gmail.com
+# EmailSettings__SenderPassword=your-app-password
+# EmailSettings__RecipientEmail=your-email@gmail.com
 ```
 
-#### Option B: Direct Configuration
-Update `appsettings.json` (not recommended for production):
-```json
-{
-  "EmailSettings": {
-    "SmtpServer": "smtp.gmail.com",
-    "SmtpPort": 587,
-    "SenderEmail": "your-email@gmail.com",
-    "SenderPassword": "your-app-password",
-    "RecipientEmail": "your-email@gmail.com"
-  }
-}
-```
-
-### 3. Gmail Setup (Required for Email)
-1. Enable 2-Factor Authentication on your Gmail account
-2. Generate an App Password:
-   - Go to Google Account Settings → Security → 2-Step Verification → App passwords
-   - Select "Mail" and "Other (custom name)"
-   - Enter "Portfolio Website" as the name
-   - Use the generated 16-character password
+### 3. Gmail App Password Setup
+1. Enable 2-Factor Authentication on Gmail
+2. Go to Google Account → Security → 2-Step Verification → App passwords
+3. Generate app password for "Portfolio Website"
+4. Use the 16-character password in `.env` file
 
 ### 4. Run the Application
 ```bash
-# Restore packages
-dotnet restore
-
-# Run in development mode
+# Option 1: Development mode with hot reload (Recommended)
 dotnet watch run
 
-# Or build and run
+# Option 2: Standard run
+dotnet run
+
+# Option 3: Build and run
 dotnet build
 dotnet run
 ```
 
 ### 5. Access the Website
-Open your browser and navigate to: `http://localhost:5285`
+Open browser: `http://localhost:5285`
+
+## 🔧 Additional Commands
+
+### Package Management
+```bash
+# Restore NuGet packages
+dotnet restore
+
+# Add new package
+dotnet add package PackageName
+
+# List installed packages
+dotnet list package
+```
+
+### Build Commands
+```bash
+# Debug build
+dotnet build
+
+# Release build
+dotnet build --configuration Release
+
+# Clean build artifacts
+dotnet clean
+```
+
+### Testing (if tests are added)
+```bash
+# Run tests
+dotnet test
+
+# Run tests with coverage
+dotnet test --collect:"XPlat Code Coverage"
+```
+
+### Publishing
+```bash
+# Publish for deployment
+dotnet publish --configuration Release --output ./publish
+
+# Self-contained publish (includes runtime)
+dotnet publish --configuration Release --runtime win-x64 --self-contained true --output ./publish
+```
+
+### Database (for future enhancements)
+```bash
+# Create migration (if using EF Core)
+dotnet ef migrations add InitialCreate
+
+# Update database
+dotnet ef database update
+```
 
 ## 📁 Project Structure
 
 ```
 PortfolioWebsite/
 ├── Controllers/           # MVC Controllers
-│   └── HomeController.cs
+│   └── HomeController.cs  # Handles all page routes
 ├── Models/               # Data Models
 │   ├── ContactViewModel.cs
 │   └── ErrorViewModel.cs
 ├── Services/             # Business Logic
-│   └── EmailService.cs
+│   └── EmailService.cs   # SMTP email service
 ├── Views/                # Razor Views
 │   ├── Home/
-│   │   ├── Index.cshtml
+│   │   ├── Index.cshtml      # Landing page
+│   │   ├── About.cshtml      # About page
+│   │   ├── Skills.cshtml     # Skills showcase
+│   │   ├── Projects.cshtml   # Project portfolio
+│   │   ├── Contact.cshtml    # Contact form page
 │   │   └── Privacy.cshtml
 │   └── Shared/
-│       └── _Layout.cshtml
+│       ├── _Layout.cshtml    # Main layout with navigation
+│       └── _ValidationScriptsPartial.cshtml
 ├── wwwroot/              # Static Files
 │   ├── css/
+│   │   └── site.css      # Custom styles & animations
 │   ├── js/
-│   ├── images/
-│   └── lib/              # Bootstrap, jQuery
+│   │   └── site.js       # Custom JavaScript
+│   ├── images/           # Profile and project images
+│   └── lib/              # Bootstrap, jQuery libraries
 ├── .env                  # Environment Variables (not committed)
-├── .gitignore           # Git Ignore Rules
-├── appsettings.json     # Application Settings
-├── Program.cs           # Application Entry Point
-└── PortfolioWebsite.csproj
+├── .env.example          # Environment template
+├── .gitignore           # Git ignore rules
+├── appsettings.json     # Application settings
+├── Program.cs           # Application entry point
+└── PortfolioWebsite.csproj  # Project configuration
 ```
 
 ## 🎨 Customization
