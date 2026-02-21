@@ -1,0 +1,184 @@
+﻿@{
+    ViewData["Title"] = "Nafis Portfolio";
+}
+
+<section id="hero" class="hero-section text-center text-white">
+    <div class="container-fluid position-relative" style="padding: 5rem 2rem; z-index: 2;">
+        <h1 class="display-4">Nafis Portfolio</h1>
+        <p class="lead">I'm a passionate developer creating amazing web experiences</p>
+        <a href="#about" class="btn btn-light btn-lg">Learn More</a>
+    </div>
+</section>
+
+<section id="about" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="~/images/nafis-profile.jpg" alt="Profile Picture" class="rounded"
+                     style="width: 200px; height: 200px; object-fit: cover;">
+                </div>
+                <div class="col-md-6">
+                    <h2>About Me</h2>
+                    <p>Hi, I'm Nafis Arafat, a Software Engineer with expertise in ASP .NET Core and C#. I love building
+                        interactive websites and solving complex problems.</p>
+                        <p>With 4 years of experience, I've worked on various projects including e-commerce platforms, content
+                            management systems, and web applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="py-5 bg-light">
+                <div class="container">
+                    <h2 class="text-center mb-4">Skills</h2>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="skill-item text-center">
+                                <h4>C#</h4>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="skill-item text-center">
+                                <h4>JavaScript</h4>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="skill-item text-center">
+                                <h4>ASP.NET Core</h4>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="skill-item text-center">
+                                <h4>SQL</h4>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="py-5">
+                <div class="container">
+                    <h2 class="text-center mb-4">Projects</h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card project-card">
+                                <img src="~/images/project1.jpg" class="card-img-top" alt="Project 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title">E-Commerce Platform</h5>
+                                        <p class="card-text">A full-stack e-commerce solution built with ASP.NET Core, featuring user
+                                            authentication, payment integration, and inventory management.</p>
+                                            <a href="#" class="btn btn-primary">View Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card project-card">
+                                        <img src="~/images/project2.jpg" class="card-img-top" alt="Project 2">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Task Management System</h5>
+                                                <p class="card-text">A collaborative task management application with real-time updates, team
+                                                    collaboration features, and progress tracking.</p>
+                                                    <a href="#" class="btn btn-primary">View Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card project-card">
+                                                <img src="~/images/project3.jpg" class="card-img-top" alt="Project 3">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Portfolio Website</h5>
+                                                        <p class="card-text">A responsive portfolio website built with ASP.NET Core MVC, featuring
+                                                            modern design, smooth animations, and contact functionality.</p>
+                                                            <a href="#" class="btn btn-primary">View Details</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <section id="contact" class="py-5 bg-light">
+                                        <div class="container">
+                                            <h2 class="text-center mb-4">Contact Me</h2>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    @if (TempData["SuccessMessage"] != null)
+                                                    {
+                                                        <div class="alert alert-success" role="alert">
+                                                            @TempData["SuccessMessage"]
+                                                        </div>
+                                                    }
+                                                    @if (TempData["ErrorMessage"] != null)
+                                                    {
+                                                        <div class="alert alert-danger" role="alert">
+                                                            @TempData["ErrorMessage"]
+                                                        </div>
+                                                    }
+                                                    <form id="contactForm" asp-action="Contact" asp-controller="Home" method="post">
+                                                        <div class="mb-3">
+                                                            <label for="name" class="form-label">Name</label>
+                                                            <input type="text" class="form-control" id="name" name="Name" required>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="email" class="form-label">Email</label>
+                                                            <input type="email" class="form-control" id="email" name="Email" required>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="message" class="form-label">Message</label>
+                                                            <textarea class="form-control" id="message" name="Message" rows="5" required></textarea>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary">Send Message</button>
+                                                    </form>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h4>Get in Touch</h4>
+                                                    <p>Email: nafisarfat6@gmail.com</p>
+                                                    <p>Phone: (123) 456-7890</p>
+                                                    <p>Location: Dacca, Bangladesh</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    @section Scripts {
+                                        <script>
+                                            // Smooth scrolling for navigation links
+                                            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                                                anchor.addEventListener('click', function (e) {
+                                                    e.preventDefault();
+                                                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                                                        behavior: 'smooth'
+                                                    });
+                                                });
+                                            });
+
+                                            // Animate skill bars on scroll
+                                            const observerOptions = {
+                                                threshold: 0.5
+                                            };
+
+                                            const observer = new IntersectionObserver((entries) => {
+                                                entries.forEach(entry => {
+                                                    if (entry.isIntersecting) {
+                                                        entry.target.style.width = entry.target.getAttribute('style').split(':')[1];
+                                                    }
+                                                });
+                                            }, observerOptions);
+
+                                            document.querySelectorAll('.progress-bar').forEach(bar => {
+                                                observer.observe(bar);
+                                            });
+                                        </script>
+                                    }
