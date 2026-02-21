@@ -11,29 +11,52 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">PortfolioWebsite</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                <a class="navbar-brand animated-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="brand-text">Nafis</span>
+                    <span class="brand-accent">Portfolio</span>
+                </a>
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex">
+                <div class="navbar-collapse collapse">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link animated-link" asp-area="" asp-controller="Home" asp-action="Index">
+                                <i class="fas fa-home me-2"></i>
+                                <span>Home</span>
+                                <div class="link-underline"></div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                            <a class="nav-link animated-link" asp-area="" asp-controller="Home" asp-action="About">
+                                <i class="fas fa-user me-2"></i>
+                                <span>About</span>
+                                <div class="link-underline"></div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Skills">Skills</a>
+                            <a class="nav-link animated-link" asp-area="" asp-controller="Home" asp-action="Skills">
+                                <i class="fas fa-code me-2"></i>
+                                <span>Skills</span>
+                                <div class="link-underline"></div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Projects">Projects</a>
+                            <a class="nav-link animated-link" asp-area="" asp-controller="Home" asp-action="Projects">
+                                <i class="fas fa-briefcase me-2"></i>
+                                <span>Projects</span>
+                                <div class="link-underline"></div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                            <a class="nav-link animated-link" asp-area="" asp-controller="Home" asp-action="Contact">
+                                <i class="fas fa-envelope me-2"></i>
+                                <span>Contact</span>
+                                <div class="link-underline"></div>
+                            </a>
                         </li>
                     </ul>
                 </div>
