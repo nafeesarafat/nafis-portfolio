@@ -44,15 +44,30 @@ public class HomeController : Controller
                 TempData["ErrorMessage"] = "Sorry, there was an error sending your message. Please try again later or contact me directly.";
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Contact");
         }
 
-        // If model is invalid, return to the index with validation errors
+        // If model is invalid, return to the contact page with validation errors
         TempData["ErrorMessage"] = "Please correct the errors and try again.";
-        return RedirectToAction("Index");
+        return RedirectToAction("Contact");
     }
 
-    public IActionResult Privacy()
+    public IActionResult About()
+    {
+        return View();
+    }
+
+    public IActionResult Skills()
+    {
+        return View();
+    }
+
+    public IActionResult Projects()
+    {
+        return View();
+    }
+
+    public IActionResult Contact()
     {
         return View();
     }
